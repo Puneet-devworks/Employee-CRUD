@@ -1,0 +1,7 @@
+db/src/gen/.hdiconfig
+db/src/gen/.hdinamespace
+db/src/gen/CATALOGSERVICE_EMPHEADER.hdbcds
+db/src/gen/MY_EMPLOYEE_EMPHEADER.hdbcds
+db/src/gen/csv/my.employee-empheader.csv
+db/src/gen/csv/my.employee-empheader.hdbtabledata
+srv/gen/csn.json
