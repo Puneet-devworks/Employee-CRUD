@@ -1,0 +1,21 @@
+PROCEDURE "EmployeeUpdate"(
+IN _ID INT,
+IN _Name varchar(45),
+IN _EmpCode varchar(45),
+IN _Salary int,
+IN _Country varchar(45)
+)
+LANGUAGE SQLSCRIPT
+AS
+BEGIN 
+		UPDATE "MY_EMPLOYEE_EMPHEADER"
+		SET
+		Name = _Name,
+		EmpCode = _EmpCode,
+		Salary = _Salary,
+		Country = _Country,
+		ID = _ID
+		WHERE ID = _ID;
+END;
+
+

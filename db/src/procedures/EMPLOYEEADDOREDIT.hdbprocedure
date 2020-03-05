@@ -1,0 +1,18 @@
+PROCEDURE "EmployeeAddOrEdit"(
+IN _Name varchar(45),
+IN _EmpCode varchar(45),
+IN _Salary int,
+IN _ID int,
+IN _Country varchar(45)
+)
+LANGUAGE SQLSCRIPT
+SQL SECURITY INVOKER
+AS
+BEGIN 
+	INSERT INTO
+	"MY_EMPLOYEE_EMPHEADER" (NAME, EMPCODE, SALARY, ID, COUNTRY)
+	values (_Name, _EmpCode, _Salary, _ID, _Country);
+END;
+
+
+ 

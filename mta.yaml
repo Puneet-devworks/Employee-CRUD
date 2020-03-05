@@ -1,0 +1,31 @@
+ID: sampleCRUDpoc
+_schema-version: '2.1'
+description: simple nodejs based CRUD app for poc
+version: 0.0.1
+modules:
+  - name: sampleCRUDpoc-db
+    type: hdb
+    path: db
+    parameters:
+      memory: 256M
+      disk-quota: 256M
+    requires:
+      - name: sampleCRUDpoc-db-hdi-container
+  - name: sampleCRUDpoc-srv
+    type: nodejs
+    path: srv
+    parameters:
+      memory: 512M
+      disk-quota: 256M
+    provides:
+      - name: srv_api
+        properties:
+          url: '${default-url}'
+    requires:
+      - name: sampleCRUDpoc-db-hdi-container
+      - name: sampleCRUDpoc-db
+resources:
+  - name: sampleCRUDpoc-db-hdi-container
+    type: com.sap.xs.hdi-container
+    properties:
+      hdi-container-name: '${service-name}'
